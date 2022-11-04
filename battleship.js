@@ -147,7 +147,6 @@ function init() {
 function handleMouseClick(eventObj) {
     var td = eventObj.target;
     var guess = td.id;
-    console.log(guess);
     controller.processGuess(guess);
 }
 
