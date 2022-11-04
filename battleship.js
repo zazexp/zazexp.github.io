@@ -1,7 +1,8 @@
 var view = {
     displayMessage: function(msg) {
         var messageArea = document.getElementById("messageArea");
-        messageArea.innerHTML = alert(msg);
+        messageArea.innerHTML = msg;
+        window.alert(msg);
     },
     displayHit: function(location){
         var cell = document.getElementById(location);
