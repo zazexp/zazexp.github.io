@@ -2,7 +2,7 @@ var view = {
     displayMessage: function(msg) {
         var messageArea = document.getElementById("messageArea");
         messageArea.innerHTML = msg;
-        alert(msg);
+        
     },
     displayHit: function(location){
         var cell = document.getElementById(location);
@@ -148,7 +148,7 @@ function handleMouseClick(eventObj) {
     var td = eventObj.target;
     var guess = td.id;
     console.log(guess);
-    model.fire(guess);
+    controller.processGuess(guess);
 }
 
 function handleKeyPress(e) {
