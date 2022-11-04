@@ -2,7 +2,7 @@ var view = {
     displayMessage: function(msg) {
         var messageArea = document.getElementById("messageArea");
         messageArea.innerHTML = msg;
-        window.alert(msg);
+        alert(msg);
     },
     displayHit: function(location){
         var cell = document.getElementById(location);
