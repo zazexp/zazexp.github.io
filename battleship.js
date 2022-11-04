@@ -2,7 +2,6 @@ var view = {
     displayMessage: function(msg) {
         var messageArea = document.getElementById("messageArea");
         messageArea.innerHTML = msg;
-        
     },
     displayHit: function(location){
         var cell = document.getElementById(location);
@@ -112,19 +111,19 @@ function parseGuess(guess) {
             return row + column;
         }
     }
-    return null;
+    //return null;
 }
 
 
 var controller = {
     guesses: 0,
     processGuess: function(guess) {
-        var location = parseGuess(guess);
+        var location = guess;
         if (location) {
             this.guesses++;
             var hit = model.fire(location);
             if (hit && model.shipsSunk === model.numShips) {
-                view.displayMessage("You sank all my battleships, in " +
+                alert("You sank all my battleships, in " +
                 this.guesses + " guesses");
             }
         }
@@ -146,8 +145,9 @@ function init() {
 
 function handleMouseClick(eventObj) {
     var td = eventObj.target;
-    var guess = td.id;
-    controller.processGuess(guess);
+   
+   // model.fire(td.id);
+   controller.processGuess(td.id);
 }
 
 function handleKeyPress(e) {
